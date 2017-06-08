@@ -3,6 +3,8 @@ var powerusagea = 20;
 var hap = 20;
 var database = firebase.database();
 var ref = database.ref("highscore");
+var txt;
+var data;
 	
 function start() {
 	document.getElementById( "images" ).setAttribute( "onclick", "javascript: power();" );
@@ -11,7 +13,7 @@ function start() {
 	setInterval(function powerusage(){
 	powerusagea = powerusagea + 10;
 document.getElementById("pu").innerHTML = "power usage:"+" "+ powerusagea;
-}, 3000);
+}, 2000);
 }
 
 function power() {	
@@ -20,18 +22,21 @@ function power() {
 }
 
 setInterval(function highamount(){
-if (hap < powera) {
-	document.getElementById("hap").innerHTML = "highest amount of power:"+" "+powera;
-    hap = powera;	
+	if (hap < powera) {
+    if (powera < powerusagea) { 
+	console.log("new highscore");
+	entername()
+	}
+	document.getElementById("hap").innerHTML = "Best Score:"+" "+txt+" "+powera;
 }
+
 if (powera < powerusagea) {
 	document.getElementById( "images" ).src = "frigo-3.jpg"; 
 	document.getElementById( "images" ).setAttribute( "onclick", "javascript: #;" );
-	document.getElementById( "start" ).setAttribute( "onclick", "javascript: location.reload();;" );
-	
+	document.getElementById( "start" ).setAttribute( "onclick", "javascript: location.reload();" );
 	document.getElementById("start").style.zIndex = "1";
-	document.getElementById("start").innerHTML = "REFRESH";
-// save();
+	document.getElementById("start").innerHTML = "RESTART";
+	hap = powera;
 }
 }, 100);
 
@@ -40,8 +45,8 @@ save();
 }
 
 function save() {
-    var data = {
-    name: 'highscore',
+    data = {
+    name: txt,
     score: hap
 	}
 	ref.push(data);
@@ -59,17 +64,26 @@ function gotData(data) {
 
   for (var i = 0; i < keys.length; i++) {
     var key = keys[i];
-    // Look at each fruit object!
     var score = highscore[key].score;
-	 console.log(score)
-	 document.getElementById("hap").innerHTML = "highest amount of power:"+" "+score;
-	 hap = score;
+	var name = highscore[key].name;
+	 console.log(name, score)
+	 document.getElementById("hap").innerHTML = "Best Score:"+"  "+txt+" "+score;
+	hap = score;
+	 txt = name;
   }
 }
+   
+   function entername() { 
+   txt = name;
+    var person = prompt("enter your name:", "");
+    if (person == null || person == "") {
+        txt = person;
+    } else {
+        txt = person;
+    }
+   }
 
-function errData (err) {
-	
-}
+function errData(err) {}
 
 
 
