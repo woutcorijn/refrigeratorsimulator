@@ -95,7 +95,8 @@ li {
 	width:100%;
 	
 }
-#photobotom {
+#photobottom {
+	z-index:-1;
 	position:absolute;
 	bottom:0;
 	background-color:#B0D2B7;

@@ -8,6 +8,7 @@ var data;
 	
 function start() {
 	document.getElementById( "images" ).setAttribute( "onclick", "javascript: power();" );
+	document.getElementById( "photobottom" ).setAttribute( "onclick", "javascript: power();" );
 	document.getElementById( "images" ).src = "frigo-1.jpg";
 	document.getElementById("start").style.zIndex = "-1";
 	setInterval(function powerusage(){
@@ -33,6 +34,7 @@ setInterval(function highamount(){
 if (powera < powerusagea) {
 	document.getElementById( "images" ).src = "frigo-3.jpg"; 
 	document.getElementById( "images" ).setAttribute( "onclick", "javascript: #;" );
+	document.getElementById( "photobottom" ).setAttribute( "onclick", "javascript: #;" );
 	document.getElementById( "start" ).setAttribute( "onclick", "javascript: location.reload();" );
 	document.getElementById("start").style.zIndex = "1";
 	document.getElementById("start").innerHTML = "RESTART";
