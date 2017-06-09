@@ -70,5 +70,26 @@ li {
 }
 }
 
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 736px)
+{ 
+li {
+	font-size:45px;
+}
+#start {
+	font-size:90px;
+	color:white;
+	padding:25px 60px 25px 60px;
+	background-color:#FE2144;
+	/* border:5px solid #B0D2B7; */
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	
+}
+}
+
 
 
