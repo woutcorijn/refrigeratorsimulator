@@ -83,7 +83,7 @@ and (min-device-width : 320px)
 and (max-device-width : 736px)
 { 
 li {
-	font-size:45px;
+	font-size:50px;
 }
 #start {
 	font-size:90px;
@@ -111,7 +111,7 @@ li {
 }
 ul {
 	width:100%;
-	padding:35px 0px 35px 0px;
+	padding:60px 0px 60px 0px;
 }
 }
 
