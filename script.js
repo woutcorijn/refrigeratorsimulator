@@ -14,13 +14,13 @@ var powerplus;
 	document.getElementById("start").style.zIndex = "-1";
     powerplus =	setInterval(function powerusage(){
     powerusagea = powerusagea + 10;
-document.getElementById("pu").innerHTML = "power usage:"+" "+ powerusagea;
+document.getElementById("pu").innerHTML = "Power Usage:"+" "+ powerusagea;
 }, 2000);
 }
 
 function power() {	
     powera = powera + 1;
-	document.getElementById("p").innerHTML = "power:"+" "+powera;
+	document.getElementById("p").innerHTML = "Power:"+" "+powera;
 }
 
 setInterval(function highamount(){

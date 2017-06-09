@@ -41,7 +41,7 @@ position: relative;
 
 #hap {
 	display:inline;
-	padding-right:20px;
+	padding-right:50px;
 }
 
 #pu {
@@ -55,11 +55,17 @@ position: relative;
 ul {
 	list-style-type: none;
 	text-align: center;
-	margin-top:30px;
+	margin:0px auto 0px auto;
+    /* background-color:#B0D2B7; */
+	background-color:#FE2144;
+	padding:15px 0px 15px 0px;
+	width:700px;
 }
 
 li {
 	font-family: 'Roboto Condensed', sans-serif;
+	color:white;
+	font-size:25px;
 	display:inline;
 	padding:10px;
 }
@@ -93,8 +99,8 @@ li {
 }
 #images {
 	width:100%;
-	
 }
+
 #photobottom {
 	z-index:-1;
 	position:absolute;
@@ -102,6 +108,10 @@ li {
 	background-color:#B0D2B7;
 	height:700px;
 	width:100%;
+}
+ul {
+	width:100%;
+	padding:35px 0px 35px 0px;
 }
 }
 
