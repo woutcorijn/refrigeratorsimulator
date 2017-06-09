@@ -5,14 +5,15 @@ var database = firebase.database();
 var ref = database.ref("highscore");
 var txt;
 var data;
+var powerplus;
 	
-var start = function start() {
+ function start() {
 	document.getElementById( "images" ).setAttribute( "onclick", "javascript: power();" );
 	document.getElementById( "photobottom" ).setAttribute( "onclick", "javascript: power();" );
 	document.getElementById( "images" ).src = "frigo-1.jpg";
 	document.getElementById("start").style.zIndex = "-1";
-	setInterval(function powerusage(){
-	powerusagea = powerusagea + 10;
+    powerplus =	setInterval(function powerusage(){
+    powerusagea = powerusagea + 10;
 document.getElementById("pu").innerHTML = "power usage:"+" "+ powerusagea;
 }, 2000);
 }
@@ -25,16 +26,16 @@ function power() {
 setInterval(function highamount(){
 	if (hap < powera) {
     if (powera < powerusagea) { 
-	clearInterval(start);
+	clearInterval(powerplus);
 	console.log("new highscore");
-	hap = powera;
 	entername()
+	hap = powera;
 	}
 	document.getElementById("hap").innerHTML = "Best Score:"+" "+txt+" "+powera;
 }
 
 if (powera < powerusagea) {
-	clearInterval(start);
+	clearInterval(powerplus);
 	document.getElementById( "images" ).src = "frigo-3.jpg"; 
 	document.getElementById( "images" ).setAttribute( "onclick", "javascript: #;" );
 	document.getElementById( "photobottom" ).setAttribute( "onclick", "javascript: #;" );
