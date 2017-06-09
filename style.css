@@ -3,6 +3,8 @@
 body { 
 text-align:center;
 margin:0;
+background-color:#DBFEDE;
+position: relative;
 }
 
 #site {
@@ -90,8 +92,15 @@ li {
 	
 }
 #images {
-	width:1000px;
+	width:100%;
 	
+}
+#photobotom {
+	position:absolute;
+	bottom:0;
+	background-color:#B0D2B7;
+	height:700px;
+	width:100%;
 }
 }
 
