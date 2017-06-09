@@ -6,7 +6,7 @@ var ref = database.ref("highscore");
 var txt;
 var data;
 	
-function start() {
+var start = function start() {
 	document.getElementById( "images" ).setAttribute( "onclick", "javascript: power();" );
 	document.getElementById( "photobottom" ).setAttribute( "onclick", "javascript: power();" );
 	document.getElementById( "images" ).src = "frigo-1.jpg";
@@ -25,20 +25,22 @@ function power() {
 setInterval(function highamount(){
 	if (hap < powera) {
     if (powera < powerusagea) { 
+	clearInterval(start);
 	console.log("new highscore");
+	hap = powera;
 	entername()
 	}
 	document.getElementById("hap").innerHTML = "Best Score:"+" "+txt+" "+powera;
 }
 
 if (powera < powerusagea) {
+	clearInterval(start);
 	document.getElementById( "images" ).src = "frigo-3.jpg"; 
 	document.getElementById( "images" ).setAttribute( "onclick", "javascript: #;" );
 	document.getElementById( "photobottom" ).setAttribute( "onclick", "javascript: #;" );
 	document.getElementById( "start" ).setAttribute( "onclick", "javascript: location.reload();" );
 	document.getElementById("start").style.zIndex = "1";
 	document.getElementById("start").innerHTML = "RESTART";
-	hap = powera;
 }
 }, 100);
 
