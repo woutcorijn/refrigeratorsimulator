@@ -80,7 +80,7 @@ function gotData(data) {
    
    function entername() { 
    txt = name;
-    var person = prompt("enter your name:", "");
+    var person = prompt("New Highscore. enter your name:", "");
     if (person == null || person == "") {
         txt = person;
     } else {
