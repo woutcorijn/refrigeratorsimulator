@@ -52,6 +52,10 @@ position: relative;
 	display:inline;
 }
 
+ul br {
+	display:none;
+}
+
 ul {
 	list-style-type: none;
 	text-align: center;
@@ -60,6 +64,8 @@ ul {
 	background-color:#FE2144;
 	padding:15px 0px 15px 0px;
 	width:900px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
 }
 
 li {
@@ -82,11 +88,29 @@ li {
 and (min-device-width : 320px) 
 and (max-device-width : 736px)
 { 
-li {
-	font-size:50px;
+ul br {
+	display:block;
 }
+li {
+	font-size:65px;
+	padding:0px;
+}
+
+#hap {
+	font-size:70px;
+	padding:0px;
+}
+
+#pu {
+	padding:40px;
+}
+
+#p {
+	padding:40px;
+}
+
 #start {
-	font-size:90px;
+	font-size:150px;
 	color:white;
 	padding:25px 60px 25px 60px;
 	background-color:#FE2144;
@@ -111,7 +135,9 @@ li {
 }
 ul {
 	width:100%;
-	padding:60px 0px 60px 0px;
+	padding:40px 0px 40px 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
 }
 }
 
