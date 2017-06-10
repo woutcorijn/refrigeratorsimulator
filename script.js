@@ -13,6 +13,7 @@ var puplus = 8;
 	document.getElementById( "photobottom" ).setAttribute( "onclick", "javascript: power();" );
 	document.getElementById( "images" ).src = "frigo-1.jpg";
 	document.getElementById("start").style.zIndex = "-1";
+	puplus = 8;
     powerplus =	setInterval(function powerusage(){
     powerusagea = powerusagea + puplus;
 document.getElementById("pu").innerHTML = "Power Usage:"+" "+ powerusagea;
