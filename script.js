@@ -18,12 +18,13 @@ var puplus = 8;
     powerusagea = powerusagea + puplus;
 document.getElementById("pu").innerHTML = "Power Usage:"+" "+ powerusagea;
 }, 2000);
-}
-
 setInterval(function puplusf(){ 
 puplus = puplus + 2;
-console.log("power usage = "+puplus);
+console.log("power usage plus = "+puplus);
 }, 10000);
+}
+
+
 
 function power() {	
     powera = powera + 1;
