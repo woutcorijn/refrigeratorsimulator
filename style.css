@@ -31,7 +31,8 @@ position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-	
+	-webkit-transition: background-color 0.1s; /* For Safari 3.1 to 6.0 */
+    transition: background-color 0.1s;
 }
 
 #start:hover {
@@ -74,6 +75,24 @@ li {
 	font-size:25px;
 	display:inline;
 	padding:10px;
+}
+
+#info {
+	font-family: 'Roboto Condensed', sans-serif;
+	float:right;
+	font-size:40px;
+    margin:-45px 140px 0px 0px;
+	padding:5px 20px 5px 20px;
+	background-color:#FE2144;
+	color:white;
+	-webkit-transition: background-color 0.1s; /* For Safari 3.1 to 6.0 */
+    transition: background-color 0.1s;
+	border-radius: 100%;
+}
+
+#info:hover {
+	background-color:#e40127;
+	cursor: hand;
 }
 
 @media screen and (max-width: 1370px) {
@@ -138,6 +157,16 @@ ul {
 	padding:40px 0px 40px 0px;
 	border-bottom-right-radius: 0px;
 	border-bottom-left-radius: 0px;
+}
+
+#info {
+	font-size:90px;
+    margin:45px 80px 0px 0px;
+	padding:35px 70px 35px 70px;
+}
+
+#info:hover {
+	transform:scale(1);
 }
 }
 
