@@ -78,14 +78,20 @@ function min() {
 }
 }
 
-function on() {
-	
-}
+// function on() {
+	// ondelay();
+// }
 
-function off() {
-	
-}
+// setTimeout(function ondelay() {
+// }, 10000); 
 
+// function off() {
+	// offdelay();
+// }
+
+// setTimeout(function offdelay() {
+ // fb 
+// }, 5000); 
 
 
 
