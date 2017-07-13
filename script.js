@@ -27,12 +27,16 @@ function closef() {
 }
 
         function opentimer() {
+			if (temp > 21) {
+				temp = temp + 0;
+			} else {
 			  temp = temp + 1;
+			}
 			  document.getElementById("degr").innerHTML = temp + " °C";
 			  	if (fridgestate.getAttribute("src") == "frigo-2.jpg" && temp > 4) {
 	document.getElementById("fridge").src = "frigo-3.jpg";
 }
-	    }
+}
 
 		
 		
@@ -51,10 +55,10 @@ function arrowf1() {
 }
 
 function plus() {
-	// if (fridgestate.getAttribute("src") == "frigo-2.jpg" && temp > 4) {
-	// document.getElementById("fridge").src = "frigo-3.jpg";
-	// document.getElementById("open").onclick = openbad;
-// }
+	 if (fridgestate.getAttribute("src") == "frigo-2.jpg" && temp > 3) {
+	 document.getElementById("fridge").src = "frigo-3.jpg";
+	 document.getElementById("open").onclick = openbad;
+}
 if (temp > 5) {
 		temp = temp + 0
 	document.getElementById("degr").innerHTML = temp + " °C";
@@ -72,6 +76,14 @@ function min() {
     temp = temp - 1
 	document.getElementById("degr").innerHTML = temp + " °C";
 }
+}
+
+function on() {
+	
+}
+
+function off() {
+	
 }
 
 
