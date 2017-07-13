@@ -4,39 +4,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=0.40, maximum-scale=1, user-scalable=no">
 <link rel="shortcut icon" href="frigo-1.jpg" />
  <link rel="stylesheet" type="text/css" href="style.css">
- <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
- <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAQBtgM6F2ybqUNZ6FKOfEZURmDGbg-t9c",
-    authDomain: "refrigerator-simulator.firebaseapp.com",
-    databaseURL: "https://refrigerator-simulator.firebaseio.com",
-    projectId: "refrigerator-simulator",
-    storageBucket: "refrigerator-simulator.appspot.com",
-    messagingSenderId: "978629874969"
-  };
-  firebase.initializeApp(config);
-</script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
 </head>
 <body>
-<div id="site">
-<div id="scoretab">
-<ul>
-<li><p id="hap">Best Score: ? 20</p></li>
-<br><br>
-<li><p id="pu">Power Usage: 20</p></li>
-<li><p id="p">Power: 20</p></li>
-</ul>
-<p id="info">?</p>
+<div id="content">
+     <div id="controlp">
+	 <p id="ctitle">CONTROL PANEL</p>
+	 <p id="csubtitlel">open/close fridge</p>
+	 <ul>
+	 <li><a onclick="openf()" id="open" class="button"  >open</a></li>
+	 <li><a onclick="closef()" class="button">close</a></li>
+	 </ul>
+	 <p id="csubtitler">change temperature</p>
+	 <ul id="temp">
+	 <li><a class="button" onclick="plus()">+1 °C</a></li>
+	 <li><a class="button" onclick="min()">-1 °C</a></li>
+	 <br>
+	 <li><a id="degr"> 1 °C</a></li>
+	 </ul>
+	 </div>
+	 <img onclick="arrowf1()" id="arrow1" src="arrows.png"></img>
+     <img id="fridge" src="frigo-1.jpg"></img>
+	 <script src="script.js"></script>
 </div>
-<img  id="images" onclick="#" src="frigo-2.jpg"></img>
-<a id="start" onclick="start()">START</a>
-<div id="photobottom" onclick="#">
-</div>
-</div>
-<script src="script.js"></script>
 </body>
 </html>
 

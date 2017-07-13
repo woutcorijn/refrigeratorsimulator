@@ -1,123 +1,79 @@
-var powera = 20;
-var powerusagea = 20;
-var hap = 20;
-var database = firebase.database();
-var ref = database.ref("highscore");
-var txt;
-var data;
-var powerplus;
-var puplus = 8;
+var cp = document.getElementById("controlp");
+var fridgestate = document.getElementById("fridge");
+var degrees = -90;
+var temp = 1;
+var timer;
+
+
+function openf() {
+	timer = setInterval(opentimer, 10000);
+	if (temp > 4) {
+		document.getElementById("fridge").src = "frigo-3.jpg";	
+		document.getElementById("open").onclick = openbad;
+	} 
+	else {
+		document.getElementById("fridge").src = "frigo-2.jpg";
+	}
+}
+
+function openbad() {
+	document.getElementById("fridge").src = "frigo-3.jpg";
+}
+
+
+function closef() {
+	clearInterval(timer);
+	document.getElementById("fridge").src = "frigo-1.jpg";
+}
+
+        function opentimer() {
+			  temp = temp + 1;
+			  document.getElementById("degr").innerHTML = temp + " °C";
+			  	if (fridgestate.getAttribute("src") == "frigo-2.jpg" && temp > 4) {
+	document.getElementById("fridge").src = "frigo-3.jpg";
+}
+	    }
+
+		
+		
+function arrowf1() {
+	degrees = degrees + 180;
+	document.getElementById("arrow1").style.transform = "rotate(" + degrees + "deg)";
+	document.getElementById("arrow1").style.mstransform = "rotate(" + degrees + "deg)";
+	document.getElementById("arrow1").style.webkittransform = "rotate(" + degrees + "deg)";
 	
- function start() {
-	document.getElementById( "images" ).setAttribute( "onclick", "javascript: power();" );
-	document.getElementById( "photobottom" ).setAttribute( "onclick", "javascript: power();" );
-	document.getElementById( "images" ).src = "frigo-1.jpg";
-	document.getElementById("start").style.zIndex = "-1";
-	puplus = 8;
-    powerplus =	setInterval(function powerusage(){
-    powerusagea = powerusagea + puplus;
-document.getElementById("pu").innerHTML = "Power Usage:"+" "+ powerusagea;
-}, 2000);
-setInterval(function puplusf(){ 
-puplus = puplus + 2;
-console.log("power usage plus = "+puplus);
-}, 10000);
-}
-
-
-
-function power() {	
-    powera = powera + 1;
-	document.getElementById("p").innerHTML = "Power:"+" "+powera;
-}
-
-setInterval(function highamount(){
-	if (hap < powera) {
-    if (powera < powerusagea) { 
-	clearInterval(powerplus);
-	console.log("new highscore");
-	entername()
-	hap = powera;
+	if (cp.style.width == "0px") {
+		document.getElementById("controlp").style.width = "300px";
+	}  
+	else {
+		document.getElementById("controlp").style.width = "0px";
 	}
-	document.getElementById("hap").innerHTML = "Best Score:"+" "+txt+" "+powera;
 }
 
-if (powera < powerusagea) {
-	clearInterval(powerplus);
-	document.getElementById( "images" ).src = "frigo-3.jpg"; 
-	document.getElementById( "images" ).setAttribute( "onclick", "javascript: #;" );
-	document.getElementById( "photobottom" ).setAttribute( "onclick", "javascript: #;" );
-	document.getElementById( "start" ).setAttribute( "onclick", "javascript: location.reload();" );
-	document.getElementById("start").style.zIndex = "1";
-	document.getElementById("start").innerHTML = "RESTART";
+function plus() {
+	// if (fridgestate.getAttribute("src") == "frigo-2.jpg" && temp > 4) {
+	// document.getElementById("fridge").src = "frigo-3.jpg";
+	// document.getElementById("open").onclick = openbad;
+// }
+if (temp > 5) {
+		temp = temp + 0
+	document.getElementById("degr").innerHTML = temp + " °C";
+} else {
+		temp = temp + 1
+	document.getElementById("degr").innerHTML = temp + " °C";
 }
-}, 100);
-
-window.onbeforeunload = function autosave(){
-save();
-}
-
-function save() {
-    data = {
-    name: txt,
-    score: hap
-	}
-	ref.push(data);
-	console.log(data);
 }
 
-var ref = database.ref("highscore");
-ref.on("value", gotData, errData);
-
-function gotData(data) {
-
-  var highscore = data.val();
-  // Grab the keys to iterate over the object
-  var keys = Object.keys(highscore);
-
-  for (var i = 0; i < keys.length; i++) {
-    var key = keys[i];
-    var score = highscore[key].score;
-	var name = highscore[key].name;
-	 console.log(name, score)
-	 document.getElementById("hap").innerHTML = "Best Score:"+"  "+txt+" "+score;
-	hap = score;
-	 txt = name;
-  }
+function min() {
+	if (temp < -2) {
+		temp = temp + 0
+	document.getElementById("degr").innerHTML = temp + " °C";
+} else {
+    temp = temp - 1
+	document.getElementById("degr").innerHTML = temp + " °C";
 }
-   
-   function entername() { 
-   txt = name;
-    var person = prompt("New Highscore. enter your name:", "");
-    if (person == null || person == "") {
-        txt = person;
-    } else {
-        txt = person;
-    }
-   }
+}
 
-function errData(err) {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//firebase code
-//{
-//  "rules": {
-//    ".read": "auth != null",
-//    ".write": "auth != null"
-//  }
-//}
 
 
 
