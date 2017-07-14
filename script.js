@@ -46,13 +46,39 @@ function arrowf1() {
 	document.getElementById("arrow1").style.mstransform = "rotate(" + degrees + "deg)";
 	document.getElementById("arrow1").style.webkittransform = "rotate(" + degrees + "deg)";
 	
-	if (cp.style.width == "0px") {
-		document.getElementById("controlp").style.width = "300px";
+
+	if (cp.style.marginLeft == "-300px") {
+		document.getElementById("controlp").style.marginLeft = "0px";
+		document.getElementById("arrow1").style.boxShadow = "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)";
 	}  
 	else {
-		document.getElementById("controlp").style.width = "0px";
+		document.getElementById("controlp").style.marginLeft = "-300px";
+		document.getElementById("arrow1").style.boxShadow = "0 -14px 28px rgba(0,0,0,0.25), 0 -10px 10px rgba(0,0,0,0.22)";
 	}
 }
+
+function arrowover() {
+
+	if (cp.style.marginLeft == "-300px") {
+		document.getElementById("arrow1").style.boxShadow = "0 -14px 28px rgba(0,0,0,0.25), 0 -10px 10px rgba(0,0,0,0.22)";
+	}  
+	else {
+		document.getElementById("arrow1").style.boxShadow = "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)";
+	}
+}
+
+function arrowout() {
+
+	if (cp.style.marginLeft == "-300px") {
+		document.getElementById("arrow1").style.boxShadow = "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)";
+	}  
+	else {
+		document.getElementById("arrow1").style.boxShadow = "0 -1px 3px rgba(0,0,0,0.12), 0 -1px 2px rgba(0,0,0,0.24)";
+	}
+}
+
+
+
 
 function plus() {
 	 if (fridgestate.getAttribute("src") == "frigo-2.jpg" && temp > 3) {
