@@ -8,22 +8,22 @@ var timer;
 function openf() {
 	timer = setInterval(opentimer, 10000);
 	if (temp > 4) {
-		document.getElementById("fridge").src = "frigo-3.jpg";	
+		document.getElementById("fridge").src = "images/frigo-3-compressed.jpg";	
 		document.getElementById("open").onclick = openbad;
 	} 
 	else {
-		document.getElementById("fridge").src = "frigo-2.jpg";
+		document.getElementById("fridge").src = "images/frigo-2-compressed.jpg";
 	}
 }
 
 function openbad() {
-	document.getElementById("fridge").src = "frigo-3.jpg";
+	document.getElementById("fridge").src = "images/frigo-3-compressed.jpg";
 }
 
 
 function closef() {
 	clearInterval(timer);
-	document.getElementById("fridge").src = "frigo-1.jpg";
+	document.getElementById("fridge").src = "images/frigo-1-compressed.jpg";
 }
 
         function opentimer() {
@@ -33,8 +33,8 @@ function closef() {
 			  temp = temp + 1;
 			}
 			  document.getElementById("degr").innerHTML = temp + " °C";
-			  	if (fridgestate.getAttribute("src") == "frigo-2.jpg" && temp > 4) {
-	document.getElementById("fridge").src = "frigo-3.jpg";
+			  	if (fridgestate.getAttribute("src") == "images/frigo-2-compressed.jpg" && temp > 4) {
+	document.getElementById("fridge").src = "images/frigo-3-compressed.jpg";
 }
 }
 
@@ -81,8 +81,8 @@ function arrowout() {
 
 
 function plus() {
-	 if (fridgestate.getAttribute("src") == "frigo-2.jpg" && temp > 3) {
-	 document.getElementById("fridge").src = "frigo-3.jpg";
+	 if (fridgestate.getAttribute("src") == "images/frigo-2-compressed.jpg" && temp > 3) {
+	 document.getElementById("fridge").src = "images/frigo-3-compressed.jpg";
 	 document.getElementById("open").onclick = openbad;
 }
 if (temp > 5) {
