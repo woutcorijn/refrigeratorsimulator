@@ -1,0 +1,26 @@
+{
+  "short_name": "refrigerator simulator",
+  "name": "refrigerator simulator",
+  "icons": [
+    {
+      "src": "images/frigo-1.jpg",
+      "sizes": "96x96",
+      "type": "image/jpg"
+    },
+    {
+      "src": "images/frigo-1.jpg",
+      "sizes": "144x144",
+      "type": "image/jpg"
+    },
+    {
+      "src": "images/frigo-1.jpg",
+      "sizes": "192x192",
+      "type": "image/jpg"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FE2144",
+  "theme_color": "#FE2144"
+}
